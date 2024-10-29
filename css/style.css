@@ -1,0 +1,102 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+
+}
+
+@font-face{
+  font-family: get_schwifty;
+  src: url(/get_schwifty.ttf)
+}
+
+.container {
+  font-family: get_schwifty;
+  margin: 0 auto;
+  max-width: 80%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#game {
+  display: grid;
+  grid-template-columns: repeat(5, 160px);
+  grid-template-rows: repeat(2, 160px);
+  grid-gap: 10px;
+}
+
+.card {
+  box-shadow: 0 3px 10px rgba(200, 200, 200, 0.9);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.front, .back {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+}
+
+.front {
+  background-image: url("/file.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+  background-size: 160px;
+}
+
+.rotated {
+  transform: rotateY(180deg);
+}
+
+img {
+  width: 160px;
+}
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
